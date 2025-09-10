@@ -1,3 +1,8 @@
+using Microsoft.EntityFrameworkCore;
+using StudentAutomation.API.Data;
+using StudentAutomation.API.Services;
+using StudentAutomation.API.Services.Interfaces;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -5,6 +10,13 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseNpgsql(connectionString));
+
+//servislerimizi ekliyoruz
+builder.Services.AddScoped<IAuthService, AuthService>();
 
 var app = builder.Build();
 
