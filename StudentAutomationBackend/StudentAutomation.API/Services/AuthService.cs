@@ -82,8 +82,27 @@ namespace StudentAutomation.API.Services
         {
             new Claim(ClaimTypes.Email, user.Email),
             new Claim(ClaimTypes.Role, user.Role),
-            new Claim(ClaimTypes.NameIdentifier, user.Id.ToString())
+            new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+            new Claim("UserId", user.Id.ToString())
         };
+
+            if (user.Role == "Teacher")
+            {
+                var teacher = _context.Teachers.FirstOrDefault(t => t.UserId == user.Id);
+                if (teacher != null)
+                {
+                    claims.Add(new Claim("TeacherId", teacher.Id.ToString()));
+                }
+            }
+
+            if (user.Role == "Student")
+            {
+                var student = _context.Students.FirstOrDefault(s => s.UserId == user.Id);
+                if (student != null)
+                {
+                    claims.Add(new Claim("StudentId", student.Id.ToString()));
+                }
+            }
 
             // JWT ayarlarını configurationdan al
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(
