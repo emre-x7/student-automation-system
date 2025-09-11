@@ -30,7 +30,7 @@ PostgreSQL 14+
 Git
 
 ## Proje Kurulumu
-1. Projeyi Clone'lama
+1. Projeyi Clone'lama 
 bash
 git clone <repository-url>
 cd student-automation-system
