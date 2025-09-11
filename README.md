@@ -4,7 +4,7 @@ Student Automation | Full-Stack Project
 # Öğrenci Otomasyon Sistemi
 
 ## Proje Açıklaması
-.NET 9 ve React ile geliştirilmiş tam stack öğrenci otomasyon sistemi.
+.NET 9 ve React ile geliştirilmiş full stack öğrenci otomasyon sistemi.
 
 ##  Özellikler
 - **Kullanıcı Yönetimi**: Login/Register işlemleri
