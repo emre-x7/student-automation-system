@@ -29,43 +29,44 @@ Node.js 18+
 PostgreSQL 14+
 Git
 
-## 1. Projeyi Clone'lama
+## Proje Kurulumu
+1. Projeyi Clone'lama
 bash
 git clone <repository-url>
 cd student-automation-system
 
-## 2. Backend Kurulumu
+2. Backend Kurulumu
 bash
-## Backend dizinine gidin
+Backend dizinine gidin
 cd StudentAutomationBackend
-# Bağımlılıkları yükleyin
+Bağımlılıkları yükleyin
 dotnet restore
-# Veritabanını oluşturun (Entity Framework Migrations)
+Veritabanını oluşturun (Entity Framework Migrations)
 dotnet ef database update
-# Projeyi çalıştırın
+Projeyi çalıştırın
 dotnet run
 
 Backend erişim: https://localhost:7150
 Swagger API Docs: https://localhost:7150/swagger
 
-## 3. Frontend Kurulumu
-# Frontend dizinine gidin
+3. Frontend Kurulumu
+Frontend dizinine gidin
 cd StudentAutomationFrontend
-# Bağımlılıkları yükleyin
+Bağımlılıkları yükleyin
 npm install
-# Development server'ı başlatın
+Development server'ı başlatın
 npm run dev
 
 Frontend erişim: http://localhost:5173
 
-## 4. Veritabanı Yapılandırması
+4. Veritabanı Yapılandırması
 {
   "ConnectionStrings": {
     "DefaultConnection": "Server=localhost;Port=5432;Database=StudentAutomationDB;User Id=postgres;Password=your_password;"
   }
 }
 
-## 5. Notlar
+5. Notlar
 Backend ilk açılışta migration sonrası tabloları oluşturur.
 Eğer PostgreSQL üzerinde DB yoksa StudentAutomationDB adında yeni bir veritabanı oluşturman gerekir.
 Frontend ile Backend’in aynı anda çalışıyor olması gerekir.
