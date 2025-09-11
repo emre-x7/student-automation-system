@@ -30,31 +30,47 @@ PostgreSQL 14+
 Git
 
 ## Proje Kurulumu
-1. Projeyi Clone'lama 
+1. Projeyi Clone'lama   
 bash
 git clone <repository-url>
 cd student-automation-system
 
+
 2. Backend Kurulumu
 bash
+
 Backend dizinine gidin
+
 cd StudentAutomationBackend
+
 Bağımlılıkları yükleyin
+
 dotnet restore
+
 Veritabanını oluşturun (Entity Framework Migrations)
+
 dotnet ef database update
+
 Projeyi çalıştırın
+
 dotnet run
 
 Backend erişim: https://localhost:7150
+
 Swagger API Docs: https://localhost:7150/swagger
 
 3. Frontend Kurulumu
+
 Frontend dizinine gidin
+
 cd StudentAutomationFrontend
+
 Bağımlılıkları yükleyin
+
 npm install
+
 Development server'ı başlatın
+
 npm run dev
 
 Frontend erişim: http://localhost:5173
