@@ -8,7 +8,7 @@ import {
   Alert,
 } from "@mui/material";
 import { useAuth } from "../../contexts/AuthContext";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import api from "../../services/api";
 
 const Login = () => {
@@ -95,6 +95,16 @@ const Login = () => {
           >
             {loading ? "Giriş Yapılıyor..." : "Giriş Yap"}
           </Button>
+
+          {/* LINK BURAYA TAŞINDI - Paper'ın İÇİNDE */}
+          <Box sx={{ textAlign: "center", mt: 2 }}>
+            <Typography variant="body2">
+              Hesabınız yok mu?{" "}
+              <Link to="/register" style={{ textDecoration: "none" }}>
+                Kayıt Ol
+              </Link>
+            </Typography>
+          </Box>
         </form>
       </Paper>
     </Box>
