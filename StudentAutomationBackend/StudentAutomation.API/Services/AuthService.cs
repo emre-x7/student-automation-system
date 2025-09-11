@@ -67,11 +67,11 @@ namespace StudentAutomation.API.Services
             //Login response'u döndür
             return new LoginResponseDto
             {
-                Token = token,
-                Email = user.Email,
-                FirstName = user.FirstName,
-                LastName = user.LastName,
-                Role = user.Role
+                token = token,
+                email = user.Email,
+                firstName = user.FirstName,
+                lastName = user.LastName,
+                role = user.Role
             };
         }
 
