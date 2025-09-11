@@ -13,6 +13,8 @@
 
         // bir derse kayıtlı öğrenciler (Many-to-Many ilişki için junction table)
         public ICollection<StudentCourse> StudentCourses { get; set; } = new List<StudentCourse>();
+        public string Status { get; set; } = "Planlandı";
+
     }
 
     public class StudentCourse

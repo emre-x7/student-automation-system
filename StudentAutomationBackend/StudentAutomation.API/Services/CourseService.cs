@@ -62,7 +62,8 @@ namespace StudentAutomation.API.Services
                 Name = createCourseDto.Name,
                 Code = createCourseDto.Code,
                 Description = createCourseDto.Description,
-                TeacherId = createCourseDto.TeacherId
+                TeacherId = createCourseDto.TeacherId,
+                Status = createCourseDto.Status
             };
 
             _context.Courses.Add(newCourse);
@@ -82,6 +83,7 @@ namespace StudentAutomation.API.Services
             course.Code = updateCourseDto.Code;
             course.Description = updateCourseDto.Description;
             course.TeacherId = updateCourseDto.TeacherId;
+            course.Status = updateCourseDto.Status;
 
             await _context.SaveChangesAsync();
             return await GetCourseByIdAsync(id);

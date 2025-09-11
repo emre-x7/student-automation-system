@@ -8,6 +8,7 @@
         public string? Description { get; set; }
         public Guid TeacherId { get; set; }
         public string TeacherName { get; set; } = string.Empty;
+        public string Status { get; set; } = "Planlandı";
     }
 
     public class CreateCourseDto
@@ -16,6 +17,8 @@
         public string Code { get; set; } = string.Empty;
         public string? Description { get; set; }
         public Guid TeacherId { get; set; }
+        public string Status { get; set; } = "Planlandı";
+
     }
 
     public class AddStudentToCourseDto

@@ -87,5 +87,12 @@ namespace StudentAutomation.API.Controllers
             var grades = await _studentService.GetStudentGradesAsync(studentId.Value);
             return Ok(grades);
         }
+
+        [HttpGet("user/{userId}/id")]
+        public async Task<ActionResult<Guid?>> GetStudentIdByUserId(Guid userId)
+        {
+            var studentId = await _studentService.GetStudentIdByUserIdAsync(userId);
+            return Ok(studentId);
+        }
     }
 }
